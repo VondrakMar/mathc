@@ -1,3 +1,4 @@
+/* Example how to init random matrxi and multiply them */
 #include "linalg.h"
 
 int main() {
