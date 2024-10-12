@@ -47,6 +47,12 @@ double gaussian_product_new_alpha(double alpha_A,double alpha_B){
     return new_alpha;
 }
 
+/* double gaussian_integral(double alpha_A, double r_A, double lim_min, double lim_max){ */
+    
+/* } */
+
+
+
 int main(){
     size_t size_x = 1000;
     double* test_x = (double*)calloc(size_x,sizeof(double));
@@ -74,6 +80,8 @@ int main(){
     write_gnu(test_x,test_yA,size_x,"testA.txt");
     write_gnu(test_x,test_yB,size_x,"testB.txt");
     write_gnu(test_x,test_y_new,size_x,"test_new.txt");
+
+
     free(test_x);
     free(test_yA);
     free(test_yB);
