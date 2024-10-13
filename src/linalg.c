@@ -45,12 +45,12 @@ double** matmul(double **A, double **B, size_t dimA, size_t dim_both, size_t dim
     return resM;
 }
 
-void print_vector(double *vec, size_t size) {
-    for (size_t i = 0; i < size; i++) {
-        printf("%lf ", vec[i]);
-    }
-    printf("\n");
-}
+// void print_vector(double *vec, size_t size) {
+//     for (size_t i = 0; i < size; i++) {
+//         printf("%lf ", vec[i]);
+//     }
+//     printf("\n");
+// }
 
 void print_matrix(double **mat, size_t dim1, size_t dim2) {
     for (size_t i = 0; i < dim1; i++) {
