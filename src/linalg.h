@@ -21,6 +21,10 @@ double** matmul(double **A, double **B, size_t dimA, size_t dim_both, size_t dim
 
 void print_matrix(double **mat, size_t dim1, size_t dim2);
 
+void read_matrix(char* filename, double** mat, size_t n, size_t m);
+
+void read_vector(char* filename, double* vec, size_t n);
+
 double** alloc_2d_array(size_t rows, size_t cols);
 
 void free_2d_array(double** array2D, size_t rows);

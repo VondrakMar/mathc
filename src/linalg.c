@@ -1,4 +1,5 @@
 #include "linalg.h"
+// I will use N for number of variables, M for number of equations. 
 
 double random_number(int min_value, int max_value) {
     double range = (max_value - min_value);
@@ -70,9 +71,50 @@ double** alloc_2d_array(size_t rows, size_t cols){
     return array2D;
 }
 
+void read_matrix(char* filename, double** mat, size_t n, size_t m){
+    // this is a fucntion, where I will read a matrix from a file. The file has to contain 1 line with n*m elements
+    // mat has to preallocated already
+    FILE *file = fopen(filename,"r");
+    if (file == NULL) {
+        perror("Pls, make sure your file exists");
+        exit(EXIT_FAILURE);
+    }
+    for (size_t i = 0; i < n; i++) {
+        for (size_t j = 0; j < m; j++) {
+            if (fscanf(file, "%lf", &mat[i][j]) != 1) {
+                fprintf(stderr, "You fucked up at (%ld, %ld)\n", i, j);
+                fclose(file);
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
+    fclose(file);
+}
+
+
+void read_vector(char* filename, double* vec, size_t n){
+    // this is a fucntion, where I will read a matrix from a file. The file has to contain 1 line with n*m elements
+    // mat has to preallocated already
+    FILE *file = fopen(filename,"r");
+    if (file == NULL) {
+        perror("Pls, make sure your file exists");
+        exit(EXIT_FAILURE);
+    }
+    for (size_t i = 0; i < n; i++) {
+        if (fscanf(file, "%lf", &vec[i]) != 1) {
+            fprintf(stderr, "You fucked up at (%ld)\n", i);
+            fclose(file);
+            exit(EXIT_FAILURE);
+        }
+    }
+    fclose(file);
+}
+
 void free_2d_array(double** array2D, size_t rows){
     for (size_t i = 0; i < rows; i++) {
          free(array2D[i]);
     }
     free(array2D);
 }
+
+
