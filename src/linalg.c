@@ -40,6 +40,7 @@ double** matmul(double **A, double **B, size_t dimA, size_t dim_both, size_t dim
             resM[rowA][colB] = 0;
             for (size_t com = 0; com < dim_both; com++) {
                 resM[rowA][colB] += A[rowA][com] * B[com][colB];
+                printf("%ld\n",A[rowA][com] * B[com][colB]);
             }
         }
     }
